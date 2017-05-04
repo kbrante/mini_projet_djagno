@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+{%block title%}
+PostList
+{%endblock title%}
+
+{%block content%}
+<h1>Liste des articles</h1>
+<ul>
+    {% for post in posts %}
+    <li>[{{post.creation_date}}]</li>
+    <li>[{{post.title}}]</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
