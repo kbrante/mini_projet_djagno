@@ -5,8 +5,7 @@ from .views import homepage
 from .views import post_list, post_detail
 
 urlpatterns = [
-    url(r'^post/list$', post_list),
-    url(r'^', homepage)
-    url(r'^post/(?P<id>[0-9]+)',post_detail, name="post-detail")
-
+    url(r'^$', homepage),
+    url(r'^post/list$', post_list, name="post-list"),
+    url(r'^post/(?P<slug>[\w-]+)$', post_detail, name="post-detail")
 ]

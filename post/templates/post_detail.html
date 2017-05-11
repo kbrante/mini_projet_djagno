@@ -1,14 +1,14 @@
 {% extends "base.html"%}
 {%block title%}
-PostList
+{{article}}
 {%endblock title%}
 
 {%block content%}
 <h1>Liste des articles</h1>
 <ul>
-    {% for post in posts %}
-    <li></li>
-
-    {% endfor %}
+    <li>{{post.title}}</li>
+    <li>{{post.creation_date}}</li>
+    <li>{{post.body}}</li>
 </ul>
+<a href="{% url 'post-list' %}">Liste des articles</a>
 {% endblock content %}
