@@ -17,3 +17,12 @@ class Post(models.Model):
 
     class Meta:
         verbose_name = 'Article'
+
+class Category(models.Model):
+    label = models.CharField(verbose_name='nom de categorie', max_length=50)
+
+    def __unicode__(self):
+        return self.label
+
+    class Meta:
+        verbose_name = 'Categorie'
