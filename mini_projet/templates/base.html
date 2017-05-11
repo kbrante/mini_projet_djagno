@@ -1,3 +1,5 @@
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,7 +10,7 @@
     <title>{% block title %} {% endblock title %}</title>
 
     <link rel="stylesheet" href="static/external/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
