@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(236, 108, 60);
+    h1 {
+        text-align: center;
+    }
+
+
+    ul {
+        list-style-type: none;
+
+        a:hover {
+            color: red;
+        }
+        h2 {
+            text-transform: capitalize;
+        }
+
+    }
+}

@@ -1,0 +1,12 @@
+body {
+  background-color: #ec6c3c; }
+  body h1 {
+    text-align: center; }
+  body ul {
+    list-style-type: none; }
+    body ul a:hover {
+      color: red; }
+    body ul h2 {
+      text-transform: capitalize; }
+
+/*# sourceMappingURL=../../../../../../../../../static/sass/style.css.map */

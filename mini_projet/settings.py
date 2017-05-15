@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post',
-    'django_extensions'
+    'django_extensions',
+    'djangobower',
+    'sass_processor'
 ]
 
 MIDDLEWARE = [
@@ -124,6 +126,22 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
+STATICFILES_FINDERS = [
+   'django.contrib.staticfiles.finders.FileSystemFinder',
+   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+   'djangobower.finders.BowerFinder',
+   'sass_processor.finders.CssFinder',
+]
+BOWER_INSTALLED_APPS = (
+   'jquery',
+   'bootstrap',
+   'fontawesome'
+)
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "static")
+
+SASS_PROCESSOR_ENABLED = True
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static/sass")
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "mini_projet", "static"),
+   os.path.join(BASE_DIR, 'mini_projet', "static"),
 ]

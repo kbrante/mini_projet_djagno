@@ -1,3 +1,5 @@
+{% load static %}
+
 {% load sass_tags %}
 
 <!DOCTYPE html>
@@ -9,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %} {% endblock title %}</title>
 
-    <link rel="stylesheet" href="static/external/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'sass/style.scss' %}">
+    <link rel="stylesheet" href=" {% static "bower_components/bootstrap/dist/css/bootstrap.min.css"  %}">
+    <link rel="stylesheet" href="{% sass_src 'sass/style.scss' %}" type="text/css">
 </head>
 
 <body>
@@ -24,8 +26,8 @@
             </div>
         </div>
     </div>
-    <script src="./static/external/jquery/dist/jquery.js" charset="utf-8"></script>
-    <script src="static/external/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static "jquery/dist/jquery.js" %}"></script>
+    <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}" charset="utf-8 "></script>
 </body>
 
 </html>

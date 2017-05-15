@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../home/salwa/Code/django/miniprojet/mini_projet/post/static/sass/style.css",
+	"sources": [
+		"../../home/salwa/Code/django/miniprojet/mini_projet/post/static/sass/style.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,OAAiB,GAiBtC;EAlBD,AAEI,IAFA,CAEA,EAAE,CAAC;IACC,UAAU,EAAE,MAAM,GACrB;EAJL,AAOI,IAPA,CAOA,EAAE,CAAC;IACC,eAAe,EAAE,IAAI,GASxB;IAjBL,AAUQ,IAVJ,CAOA,EAAE,CAGE,CAAC,AAAA,MAAM,CAAC;MACJ,KAAK,EAAE,GAAG,GACb;IAZT,AAaQ,IAbJ,CAOA,EAAE,CAME,EAAE,CAAC;MACC,cAAc,EAAE,UAAU,GAC7B"
+}

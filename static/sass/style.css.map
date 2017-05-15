@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../../home/salwa/Code/django/miniprojet/mini_projet/post/static/sass/style.css",
+	"sources": [
+		"../../home/salwa/Code/django/miniprojet/mini_projet/post/static/sass/style.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,IAAI,GAKzB;EAND,AAGI,IAHA,CAGA,CAAC,AAAA,MAAM,CAAC;IACJ,KAAK,EAAE,GAAG,GACb"
+}
