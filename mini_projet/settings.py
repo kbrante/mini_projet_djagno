@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'djangobower',
     'sass_processor'
+
 ]
 
 MIDDLEWARE = [
@@ -136,7 +137,13 @@ BOWER_INSTALLED_APPS = (
    'jquery',
    'bootstrap',
    'fontawesome'
+   'bootstrap-sass'
 )
+
+SASS_PROCESSOR_INCLUDE_DIRS = [
+   os.path.join(BASE_DIR, 'static/bower_components/bootstrap-sass/assets/stylesheets'),
+]
+
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "static")
 
 SASS_PROCESSOR_ENABLED = True
