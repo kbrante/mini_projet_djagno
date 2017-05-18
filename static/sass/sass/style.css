@@ -5814,16 +5814,22 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+html {
+  background-color: white; }
+
 body {
-  background-color: #aa6c39; }
+  width: 80%;
+  margin: auto;
+  background-color: #f48944;
+  min-height: 800px; }
   body h1 {
     text-align: center;
-    color: pink; }
+    color: white;
+    text-transform: capitalize; }
   body ul {
     list-style-type: none; }
-    body ul a:hover {
+    body ul a {
+      text-decoration: none;
       color: #ffd1aa; }
-    body ul h2 {
-      text-transform: capitalize; }
 
 /*# sourceMappingURL=../../../../../../../../../static/sass/style.css.map */

@@ -4,7 +4,7 @@ PostList
 {%endblock title%}
 
 {%block content%}
-
+<h1>Les articles</h1>
 <form class="" action="{% url 'post-list' %}" method="get">
     <select class="" name="Category">
         <option value=""></option>
@@ -16,11 +16,11 @@ PostList
 
 </form>
 
-<h1>Liste des articles
+<h2>Liste des articles
     {% if selected_category != None %}
     : {{ selected_category }}
     {% endif %}
-</h1>
+</h2>
     {% for post in posts %}
     <div class="col-md-3">
         <ul>

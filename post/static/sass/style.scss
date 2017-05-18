@@ -1,21 +1,26 @@
 @import 'bootstrap';
+html {
+    background-color: white;
+}
 body {
-    background-color: #aa6c39;
+    width: 80%;
+    margin: auto;
+    background-color: #f48944;
+    min-height: 800px;
     h1 {
         text-align: center;
-        color: pink;
+        color: white;
+        text-transform: capitalize;
     }
 
 
     ul {
         list-style-type: none;
 
-        a:hover {
+        a {
+            text-decoration: none;
             color: #ffd1aa;
         }
-        h2 {
-            text-transform: capitalize;
-        }
-
     }
+
 }
