@@ -9,7 +9,7 @@ PostList
     <select class="" name="Category">
         <option value=""></option>
         {% for category in categories %}
-        <option value="{{category.id}}">{{category}}</option>
+        <option value="{{category.id}}"   {% if category.id == selected_category.id %}selected{% endif %}>{{category}}</option>
         {% endfor %}
     </select>
     <input type="submit" name="" value="Go">
