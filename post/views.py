@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from models import Post, Category
 
 # Create your views here.
@@ -22,6 +24,17 @@ def post_list(request):
     else:
         posts = Post.objects.all()
 
+    paginator = Paginator(posts, 16) # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        posts = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        posts = paginator.page(paginator.num_pages)
 
     context = {
         "posts" : posts,

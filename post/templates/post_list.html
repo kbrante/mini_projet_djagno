@@ -24,9 +24,26 @@ PostList
     {% for post in posts %}
     <div class="col-md-3">
         <ul>
+            <img src="http://lorempixel.com/200/200" />
             <li><a href="{% url "post-detail" post.slug %}"><h2>{{post.title}}</h2> {{post.creation_date}}  </a></li>
         </ul>
     </div>
     {% endfor %}
+
+    <div class="pagination col-md-12 text-center">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
 
 {% endblock content %}
