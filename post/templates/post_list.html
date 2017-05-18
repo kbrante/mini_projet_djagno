@@ -5,9 +5,11 @@ PostList
 
 {%block content%}
 <h1>Liste des articles</h1>
-<ul>
     {% for post in posts %}
-    <li><a href="{% url "post-detail" post.slug %}"><h2>{{post.title}}</h2> {{post.creation_date}}  </a></li></br>
+    <div class="col-md-3">
+        <ul>
+            <li><a href="{% url "post-detail" post.slug %}"><h2>{{post.title}}</h2> {{post.creation_date}}  </a></li>
+        </ul>
+    </div>
     {% endfor %}
-</ul>
 {% endblock content %}

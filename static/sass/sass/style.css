@@ -5815,13 +5815,14 @@ button.close {
     display: none !important; } }
 
 body {
-  background-color: #ec6c3c; }
+  background-color: #aa6c39; }
   body h1 {
-    text-align: center; }
+    text-align: center;
+    color: pink; }
   body ul {
     list-style-type: none; }
     body ul a:hover {
-      color: red; }
+      color: #ffd1aa; }
     body ul h2 {
       text-transform: capitalize; }
 

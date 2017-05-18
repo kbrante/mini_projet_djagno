@@ -1,8 +1,9 @@
 @import 'bootstrap';
 body {
-    background-color: rgb(236, 108, 60);
+    background-color: #aa6c39;
     h1 {
         text-align: center;
+        color: pink;
     }
 
 
@@ -10,7 +11,7 @@ body {
         list-style-type: none;
 
         a:hover {
-            color: red;
+            color: #ffd1aa;
         }
         h2 {
             text-transform: capitalize;

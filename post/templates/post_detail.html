@@ -4,11 +4,14 @@
 {%endblock title%}
 
 {%block content%}
-<h1>Liste des articles</h1>
-<ul>
-    <li>{{post.title}}</li>
-    <li>{{post.creation_date}}</li>
-    <li>{{post.body}}</li>
-</ul>
+<h1>{{post.title}}</h1>
+<div class="col-md-6">
+    <ul>
+        <li>{{post.creation_date}}</li>
+        <li>{{post.body}}</li>
+    </ul>
+</div>
+<div class="col-md-12">
 <a href="{% url 'post-list' %}">Liste des articles</a>
+</div>
 {% endblock content %}
