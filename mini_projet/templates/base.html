@@ -17,19 +17,27 @@
 
 <body>
     <header>
-        <a href="{% url 'login'%}">se connecter</a>
+        {% if request.user.is_authenticated %}
+            Salut {{request.user.username}}
+            <a href="{% url 'logout' %}">logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">login</a>
+        {% endif %}
     </header>
     <div class="container">
         <div class="row">
 
-                {% block content %}
-                {%endblock%}
-
-            </div>
         </div>
+
+        {% block content %}
+
+        {%endblock%}
+
     </div>
-    <script type="text/javascript" src="{% static "jquery/dist/jquery.js" %}"></script>
-    <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}" charset="utf-8 "></script>
+</div>
+</div>
+<script type="text/javascript" src="{% static "jquery/dist/jquery.js" %}"></script>
+<script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}" charset="utf-8 "></script>
 </body>
 
 </html>

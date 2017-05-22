@@ -6,7 +6,7 @@ Login
 
 {% block content %}
   <h2>Login</h2>
-  <form method="post" action="{%url 'login'%}?next={{request.path}}">
+  <form method="post" action="{%url 'login'%}?next={{ request.META.HTTP_REFERER }}">
     {{ form }}
     {% csrf_token %}
     <button type="submit">Login</button>

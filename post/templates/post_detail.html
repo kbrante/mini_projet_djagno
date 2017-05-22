@@ -5,6 +5,10 @@
 
 {%block content%}
 <h1>{{post.title}}</h1>
+    {% if request.user.is_authenticated and perms.post.change_post%}
+        <a href="{% url 'post-edit' post.slug %}">Editer</a>
+        <a href="{% url 'post-delete' post.slug %}">Delete</a>
+    {% endif %}
 <div class="col-md-6">
     <ul>
         <li>{{post.creation_date}}</li>

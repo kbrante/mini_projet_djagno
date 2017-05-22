@@ -135,9 +135,8 @@ STATICFILES_FINDERS = [
 ]
 BOWER_INSTALLED_APPS = (
    'jquery',
-   'bootstrap',
+   'bootstrap-sass',
    'fontawesome'
-   'bootstrap-sass'
 )
 
 SASS_PROCESSOR_INCLUDE_DIRS = [
@@ -152,3 +151,4 @@ SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static/sass")
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, 'mini_projet', "static"),
 ]
+LOGIN_URL = "/login"

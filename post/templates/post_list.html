@@ -4,12 +4,17 @@ PostList
 {%endblock title%}
 
 {%block content%}
+{% if perms.post.add_post %}
+<a href=" {% url 'post-create'%}">creation d'article</a>
+{% endif %}
 <h1>Les articles</h1>
 <form class="" action="{% url 'post-list' %}" method="get">
     <select class="" name="Category">
         <option value=""></option>
         {% for category in categories %}
-        <option value="{{category.id}}"   {% if category.id == selected_category.id %}selected{% endif %}>{{category}}</option>
+        <option value="{{category.id}}" {% if category.id == selected_category.id %}selected{% endif %}>
+            {{category}}
+        </option>
         {% endfor %}
     </select>
     <input type="submit" name="" value="Go">
