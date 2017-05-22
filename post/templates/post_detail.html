@@ -7,7 +7,9 @@
 <h1>{{post.title}}</h1>
     {% if request.user.is_authenticated and perms.post.change_post%}
         <a href="{% url 'post-edit' post.slug %}">Editer</a>
+    {%if request.user.is_superuser %}
         <a href="{% url 'post-delete' post.slug %}">Delete</a>
+    {% endif %}
     {% endif %}
 <div class="col-md-6">
     <ul>

@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.contrib.auth.decorators import login_required, permission_required
-
+from django.contrib.auth.decorators import login_required, permission_required, user_passes_test
+from .forms import PostForm
 
 from models import Post, Category
 
@@ -59,26 +59,42 @@ def post_detail(request, slug):
 @login_required
 @permission_required('post.add_post')
 def post_create(request):
+    form = PostForm()
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save()
+            return redirect("post-detail", slug = post.slug)
 
-    return render(request, "post_create.html")
+    context = {
+        "form" : form
+    }
+
+    return render(request, "post_create.html", context)
 
 @login_required
 @permission_required('post.change_post')
 def post_edit(request,slug):
 
     post = Post.objects.get(slug=slug)
+    form = PostForm(instance = post)
+    if request.method == "POST":
+        form = PostForm(data = request.POST, instance = post)
+        if form.is_valid():
+            post = form.save()
+            return redirect("post-detail", slug = post.slug)
 
     context = {
-        "post" : post
+        "post" : post,
+        "form" : form
     }
 
     return render(request, "post_edit.html", context)
 
+@login_required
+@user_passes_test(lambda u:u.is_superuser)
 def post_delete(request, slug):
     post = Post.objects.get(slug=slug)
 
-    context = {
-        "post" : post
-    }
-
-    return redirect('post_list')
+    post.delete()
+    return redirect('post-list')
