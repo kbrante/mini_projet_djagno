@@ -16,10 +16,6 @@ class PostAdmin(admin.ModelAdmin):
         ('None', {
             'fields': (('title', 'category'), 'body'),
         }),
-        ('contenu',{
-            'fields': ('body',),
-            'classes': ('collapse',),
-        }),
     )
 # Register your models here.
 

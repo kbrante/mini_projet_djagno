@@ -11,9 +11,16 @@ post_edit
         {% csrf_token %}
         {% bootstrap_form form %}
     {% buttons %}
-        <button type="submit" class="btn btn-primary text-center">
+        <button type="submit" class="btn btn-primary">
             {% bootstrap_icon "star" %} Submit
         </button>
     {% endbuttons %}
     </form>
+
 {% endblock content %}
+
+
+{% block extra_script %}
+{{ form.media }}
+
+{%endblock%}

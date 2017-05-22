@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 from autoslug import AutoSlugField
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -21,7 +22,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(verbose_name='Mon super titre', max_length=100)
     slug = AutoSlugField(populate_from='title', unique_with=("title",))
-    body = models.TextField(verbose_name='Contenu')
+    body = RichTextField(verbose_name='Contenu')
     creation_date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category)
 

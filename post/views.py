@@ -7,6 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required, permission_required, user_passes_test
 from .forms import PostForm
 
+
 from models import Post, Category
 
 # Create your views here.

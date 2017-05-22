@@ -154,3 +154,5 @@ STATICFILES_DIRS = [
    os.path.join(BASE_DIR, 'mini_projet', "static"),
 ]
 LOGIN_URL = "/login"
+
+CKEDITOR_JQUERY_URL = '/static/jquery/dist/jquery.min.js'
